@@ -4,3 +4,4 @@
 
 - ReactJS, Redux
 - ECMAScript 6
+- Semantic UI

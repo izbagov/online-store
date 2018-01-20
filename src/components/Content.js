@@ -1,53 +1,20 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import {
-  Grid,
-  Card,
-  Image,
-  Button
-} from 'semantic-ui-react'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-class Content extends Component {
-  renderProduct(item, index) {
-    return(
-      <Card key={item.id}>
-        <Card.Content>
-          <div className="card-image">
-            <Image src={item.image} size='small' />
-          </div>
-          <Card.Header className="card-header">{item.name}</Card.Header>
-          <Button primary>Подробнее</Button>
-        </Card.Content>
-      </Card>
-    )
-  }
+import Home from './Home';
+import Contacts from './Contacts';
+import Company from './Company';
 
-  render() {
-    const { products } = this.props
-    return(
-      <div className="content">
-        <Grid>
-          <Grid.Column width={4}>
-            Sidebar
-          </Grid.Column>
-          <Grid.Column width={12}>
-            <Card.Group itemsPerRow={3}>
-              {
-                products.items.map(item => this.renderProduct(item))
-              }
-            </Card.Group>
-          </Grid.Column>
-        </Grid>
-      </div>
-    )
-  }
+const Content = () => {
+  return (
+    <div className="content">
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/company" component={Company} />
+        <Route exact path="/contacts" component={Contacts} />
+      </Switch>
+    </div>
+  )
 }
 
-const mapStateToProps = state => {
-  return {
-    products: state
-  }
-}
-
-
-export default connect(mapStateToProps)(Content);
+export default Content;

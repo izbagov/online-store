@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Menu
 } from 'semantic-ui-react'
@@ -7,16 +8,13 @@ const Header = () => (
   <header>
     <Menu>
       <Menu.Item>
-        Главная
+        <Link to="/">Главная</Link>
       </Menu.Item>
       <Menu.Item>
-        Продукция
+        <Link to="/company">О компании</Link>
       </Menu.Item>
       <Menu.Item>
-        О компаниии
-      </Menu.Item>
-      <Menu.Item>
-        Контакты
+        <Link to="/contacts">Контакты</Link>
       </Menu.Item>
     </Menu>
   </header>

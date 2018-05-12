@@ -4,20 +4,21 @@ import {
   Button,
   Image
 } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
   const { data } = props;
-  return (
-    <Card key={data.id}>
+  return <Card key={data.id}>
       <Card.Content>
         <div className="card-image">
-          <Image src={data.image} size='small' />
+          <Image src={data.image} size="small" />
         </div>
         <Card.Header className="card-header">{data.name}</Card.Header>
-        <Button primary>Подробнее</Button>
+        <Button as={Link} to={`/product/${data.id}`} primary>
+          Подробнее
+        </Button>
       </Card.Content>
-    </Card>
-  )
+    </Card>;
 }
 
 export default Product

@@ -2,6 +2,6 @@
 
 Что было использовано:
 
-- ReactJS, Redux
+- ReactJS, Redux, React router
 - ECMAScript 6
 - Semantic UI

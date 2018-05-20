@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 import Home from './Home';
@@ -8,7 +8,7 @@ import Company from './Company';
 import ProductInfo from './ProductInfo'
 
 const Content = (props) => {
-  const { items } = props.products
+  const { items } = props;
   return(
     <div className="content">
       <Switch>
@@ -25,9 +25,8 @@ const Content = (props) => {
 
 const mapStateToProps = state => {
   return {
-    products: state
+    items: state.products
   }
 }
 
-export default connect(mapStateToProps)(Content)
-// export default Content;
+export default withRouter(connect(mapStateToProps)(Content));

@@ -3,16 +3,24 @@ import {
   Grid,
   Image,
   Message,
+  Container,
   Header,
-  Divider
+  Divider,
+  Button
 } from "semantic-ui-react";
 
+import { history } from '../reducers'
+
 export default ({ details}) => {
-  console.log(details);
   return <Grid>
       <Grid.Row>
         <Grid.Column width={5}>
           <Image src={details.image} />
+          <Container textAlign="center">
+            <Button size="mini" onClick={() => history.goBack()}>
+              Вернуться назад
+            </Button>
+          </Container>
         </Grid.Column>
         <Grid.Column width={11}>
           <Header as="h1">Name: {details.name}</Header>

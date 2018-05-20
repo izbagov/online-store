@@ -6,8 +6,7 @@ import {
 } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
-const Product = (props) => {
-  const { data } = props;
+const Product = ({ data }) => {
   return <Card key={data.id}>
       <Card.Content>
         <div className="card-image">

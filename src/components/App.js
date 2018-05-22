@@ -4,7 +4,7 @@ import {
 } from 'semantic-ui-react'
 
 import Header from './Header'
-import Content from './Content'
+import Content from '../containers/Content'
 
 const App = () => (
   <div className="main">

@@ -9,10 +9,9 @@ const sortBySearch = (products, searchQuery) => {
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ products, filter}) => {
   return {
-    products: sortBySearch(state.products, state.filter.searchQuery),
-    searchQuery: state.filter.searchQuery
+    products: sortBySearch(products, filter.searchQuery)
   }
 }
 

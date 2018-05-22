@@ -1,0 +1,2 @@
+export const ALL_PRODUCTS = "ALL_PRODUCTS";
+export const SET_SEARCH_QUERY = "SET_SEARCH_QUERY";

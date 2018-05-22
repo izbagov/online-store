@@ -1,4 +1,4 @@
-import { SET_SEARCH_QUERY } from '../actionTypes'
+import { SET_SEARCH_QUERY } from '../actions/types'
 
 const initialState = {
   searchQuery: ''
